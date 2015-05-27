@@ -29,22 +29,28 @@ state_e do_state_init(void) {
 }
 
 state_e do_state_enable_osc(void) {
-  // Do something interesting...
+  delay(0.021); //Wait for Oscillator to wake up (Page 5 Reference ADS1299)
   return RESET_1;
 }
 
 state_e do_state_reset_1(void) {
-  // Do something interesting...
+  digitalWrite(ADS_RST, HIGH); 
+  delay(1000); //Wait for it to stabilize
   return RESET_2;
 }
 
 state_e do_state_reset_2(void) {
-  // Do something interesting...
+  digitalWrite(ADS_RST, LOW);
+  delay(150); //Page 4 ADS1299 Datasheet
+  digitalWrite(ADS_RST, HIGH);
+  delay(150);
+  digitalWrite(ADS_CS, LOW);
   return PRE_CONFIG;
 }
 
 state_e do_state_pre_config(void) {
-  // Do something interesting...
+  xfer (_SDATAC);
+  delay(0.03); 
   return CONFIG;
 }
 
@@ -55,7 +61,9 @@ state_e do_state_config(void) {
 }
 
 state_e do_state_start_samp(void) {
-  // Do something interesting...
+  xfer(_RDATAC);
+  delay(0.03);
+  xfer(_START);
   return MAIN;
 }
 

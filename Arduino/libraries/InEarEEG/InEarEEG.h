@@ -1,6 +1,8 @@
 #ifndef _____InEarEEG__
 #define _____InEarEEG__
 
+#include <Arduino.h>
+//#include <SPI.h>
 
 enum state_e {
   INIT,
@@ -12,6 +14,9 @@ enum state_e {
 	START_SAMP,
 	MAIN
 };
+
+byte xfer(byte);
+
 
 
 #endif
