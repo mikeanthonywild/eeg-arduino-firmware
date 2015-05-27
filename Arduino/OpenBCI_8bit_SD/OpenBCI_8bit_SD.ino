@@ -237,7 +237,7 @@ void getCommand(char token){
 
 // STREAM DATA COMMANDS
       case 'n':  
-          // something useful here
+          Serial.println("SUP");
         break;
       case 'b':
         if(use_SD) stampSD(ACTIVATE);
