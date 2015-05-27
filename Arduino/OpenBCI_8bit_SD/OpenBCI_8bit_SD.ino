@@ -449,14 +449,4 @@ void printRegisters(){
     startRunning(cur_outputType);
   }
 }
-
-
-
 // end
-
-
-
-
-
-
-
