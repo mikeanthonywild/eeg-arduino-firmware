@@ -71,6 +71,3 @@ state_e do_state_main(void) {
   // Do something interesting...
   return MAIN;
 }
-
-
-
