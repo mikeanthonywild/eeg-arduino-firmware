@@ -25,7 +25,7 @@ void loop (void)
   digitalWrite(SS, LOW);    // SS is pin 10
 
   // send test string
-  for (const char * p = "Hello, world!\n" ; c = *p; p++)
+  for (const char * p = "Hello, dfghfdgdfsgdsgsdfg world!\n" ; c = *p; p++)
     SPI.transfer (c);
 
   // disable Slave Select
